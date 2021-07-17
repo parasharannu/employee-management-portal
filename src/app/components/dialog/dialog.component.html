@@ -1,0 +1,20 @@
+<!-- my-dialog-modal.component.html -->
+<h2>Dialog Modal</h2>
+
+<app-employee-dialog-info1 *ngIf="modalShow === 1"></app-employee-dialog-info1>
+
+<app-employee-dialog-info2 *ngIf="modalShow === 2"></app-employee-dialog-info2>
+
+<app-employee-dialog-info3 *ngIf="modalShow === 3"></app-employee-dialog-info3>
+
+<app-employee-dialog-info4 *ngIf="modalShow === 4"></app-employee-dialog-info4>
+
+<div>
+    <button mat-raised-button (click)="nextDialog()">{{modalShow === 4 ? 'Submit' : 'Next'}}</button>
+</div>
+<div *ngIf="modalShow > 1">
+    <button mat-raised-button (click)="prevDialog()">Back</button>
+</div>
+<div>
+    <button mat-raised-button (click)="closeDialog()">Cancel</button>
+</div>
