@@ -1,0 +1,17 @@
+::ng-deep {
+    .mat-dialog-container {
+        max-width: 962px;
+        min-width: 500px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .modal-title {
+        margin-bottom: 0 !important;
+    }
+
+    .modal-body {
+        max-height: calc(100vh - 200px);
+        overflow: auto;
+    }
+}

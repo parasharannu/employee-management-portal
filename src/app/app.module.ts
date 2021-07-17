@@ -14,6 +14,7 @@ import { EmployeeDialogInfo1Component } from './components/employee-dialog-info1
 import { EmployeeDialogInfo2Component } from './components/employee-dialog-info2/employee-dialog-info2.component';
 import { EmployeeDialogInfo3Component } from './components/employee-dialog-info3/employee-dialog-info3.component';
 import { EmployeeDialogInfo4Component } from './components/employee-dialog-info4/employee-dialog-info4.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EmployeeDialogInfo4Component } from './components/employee-dialog-info4
     EmployeeDialogInfo1Component,
     EmployeeDialogInfo2Component,
     EmployeeDialogInfo3Component,
-    EmployeeDialogInfo4Component
+    EmployeeDialogInfo4Component,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

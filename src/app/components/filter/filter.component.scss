@@ -1,0 +1,41 @@
+.filter {
+
+    &-cont {
+        padding: 8px 10px;
+        background: #ECECEC;
+    }
+
+    &_t {
+        margin-bottom: 15px;
+
+        &-h4,&-p {
+            margin-bottom: 0;
+        }
+
+        .expand {
+            font-size: 38px;
+        }
+    }
+
+    &_b {
+        &-i {
+            margin-right: 15px;
+
+            &-p {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    &-site {
+        width: 180px;
+    }
+
+    &-status {
+        width: 150px;
+    }
+
+    &-flex {
+        width: 120px;
+    }
+}

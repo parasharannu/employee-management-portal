@@ -1,0 +1,58 @@
+.employee {
+    &-table {
+        border: 1px solid darkgray;
+
+        tr {
+            border-bottom: 1px solid #ccc;
+
+            th {
+                font-weight: bold;
+            }
+
+            >th,
+            >td {
+                padding: 10px;
+                text-align: left;
+
+                &.tc {
+                    text-align: center;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                &:last-child {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .arr-d,
+    .danger-icon {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+}
+
+::ng-deep {
+    .hr {
+        border-bottom: 2px solid #000;
+    }
+
+    .btn-back {
+        margin-right: auto;
+    }
+}
+
+.header {
+
+    &-h2 {
+        color: #2694EC;
+        margin-bottom: 0;
+    }
+    .material-icons{
+        margin-right: 5px;
+    }
+}
