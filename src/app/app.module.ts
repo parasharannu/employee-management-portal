@@ -15,6 +15,8 @@ import { EmployeeDialogInfo2Component } from './components/employee-dialog-info2
 import { EmployeeDialogInfo3Component } from './components/employee-dialog-info3/employee-dialog-info3.component';
 import { EmployeeDialogInfo4Component } from './components/employee-dialog-info4/employee-dialog-info4.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { employeeFeatureKey, employeeReducer } from './state-management/reducer/employee.reducer';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { FilterComponent } from './components/filter/filter.component';
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    StoreModule.forFeature(employeeFeatureKey, employeeReducer)
   ],
   providers: [],
   bootstrap: [AppComponent]

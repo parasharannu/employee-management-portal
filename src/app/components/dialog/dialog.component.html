@@ -1,24 +1,32 @@
 <!-- my-dialog-modal.component.html -->
-<div class="modal-header">
-    <h4 class="modal-title prime-color" id="modal-basic-title">
-        New Employee
-    </h4>
-    <!-- <button type="button" class="close" aria-label="Close" (click)="closeDialog()">
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+    <div class="modal-header">
+        <h4 class="modal-title prime-color" id="modal-basic-title">
+            New Employee
+        </h4>
+        <!-- <button type="button" class="close" aria-label="Close" (click)="closeDialog()">
         <span aria-hidden="true">×</span>
     </button> -->
-</div>
-<div class="modal-body">
-    <app-employee-dialog-info1 *ngIf="modalShow === 1"></app-employee-dialog-info1>
+    </div>
+    <div class="modal-body">
+        <app-employee-dialog-info1 [dialogForm]="formGroup" [employee]="employee" *ngIf="modalShow === 1">
+        </app-employee-dialog-info1>
 
-    <app-employee-dialog-info2 *ngIf="modalShow === 2"></app-employee-dialog-info2>
+        <app-employee-dialog-info2 [dialogForm]="formGroup" [employee]="employee" *ngIf="modalShow === 2">
+        </app-employee-dialog-info2>
 
-    <app-employee-dialog-info3 *ngIf="modalShow === 3"></app-employee-dialog-info3>
+        <app-employee-dialog-info3 [dialogForm]="formGroup" [employee]="employee" *ngIf="modalShow === 3">
+        </app-employee-dialog-info3>
 
-    <app-employee-dialog-info4 *ngIf="modalShow === 4"></app-employee-dialog-info4>
-</div>
-<div class="modal-footer">
-    <button class="btn btn-outline-primary btn-back" mat-raised-button (click)="prevDialog()">Back</button>
-    <button class="btn btn-outline-primary" mat-raised-button (click)="closeDialog()">Cancel</button>
-    <button mat-raised-button class="btn btn-outline-primary" (click)="nextDialog()">{{modalShow === 4 ?
-        'Submit' : 'Next'}}</button>
-</div>
+        <app-employee-dialog-info4 [dialogForm]="formGroup" [employee]="employee" *ngIf="modalShow === 4">
+        </app-employee-dialog-info4>
+    </div>
+    <div class="modal-footer">
+        <button type="button" *ngIf="modalShow !== 1" class="btn btn-outline-primary btn-back" mat-raised-button
+            (click)="prevDialog()">Back</button>
+        <button type="button" class="btn btn-outline-primary" mat-raised-button (click)="closeDialog()">Cancel</button>
+        <button type="submit" mat-raised-button class="btn btn-outline-primary">
+            {{modalShow === 4 ? 'Submit' : 'Next'}}
+        </button>
+    </div>
+</form>

@@ -42,12 +42,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="prime-color">AAPD</td>
-                    <td>DIA</td>
-                    <td class="tc">22/24</td>
-                    <td class="tc">12/2023</td>
-                    <td class="tc">No</td>
+                <tr *ngFor="let employee of employees | async;">
+                    <td class=" prime-color">{{employee.workSite}}</td>
+                    <td>{{employee.workSite}}</td>
+                    <td class="tc">{{employee.workSite}}</td>
+                    <td class="tc">{{employee.workSite}}</td>
+                    <td class="tc">{{employee.workSite}}</td>
                 </tr>
                 <tr>
                     <td class="prime-color">AAPD</td>
