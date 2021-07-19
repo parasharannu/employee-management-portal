@@ -8,16 +8,11 @@ export interface IShiftMeal {
     second: string;
 }
 
-export interface IRDOS {
-    name: string;
-    value: string;
-}
-
 export interface IShift {
     name: string;
     noOfPositions: number;
     shiftTime: IShiftTime;
     mealTime?: IShiftMeal;
-    rdos: IRDOS[];
+    rdos: any
     staggerRDO: string;
 }
