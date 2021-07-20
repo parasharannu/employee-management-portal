@@ -1,8 +1,11 @@
 <form [formGroup]="dialogForm">
     <div class="form-group">
         <label for="empName" class="prime-color">Employee Skills:</label>
-        <div class="badge-wrap flex ac w100 jsb">
-            <span class="badge badge-info" *ngFor="let skill of employee.skills">{{skill}}</span>
+        <div class="badge-wrap flex ac wrap w100">
+            <div class="badge badge-info" *ngFor="let skill of employee.skills">
+                {{skill}}
+                <span class="material-icons badge-close">close</span>
+            </div>
 
             <!-- <span class="badge badge-info">Angular</span>
             <span class="badge badge-info">Angular</span> -->
@@ -12,7 +15,7 @@
         <label for="displayName">Enter Skills:</label>
         <div class="flex ac jsb">
             <input formControlName="skill" class="e-skill-in" type="text" />
-            <button (click)="addSkill()" class="material-icons">add</button>
+            <button (click)="addSkill()" class="btn add-btn material-icons">add</button>
         </div>
     </div>
     <div class="form-group">
