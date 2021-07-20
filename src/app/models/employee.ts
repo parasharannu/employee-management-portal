@@ -7,7 +7,7 @@ export interface IEmployee {
     port: number;
     workUnit: string;
     workSite: string;
-    unitSize: number;
+    unitSize: string;
     activeFrom: string;
     activeThrough: string;
     description: string;

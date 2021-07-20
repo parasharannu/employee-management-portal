@@ -43,11 +43,30 @@
             </thead>
             <tbody>
                 <tr *ngFor="let employee of employees | async;">
-                    <td class=" prime-color">{{employee.workSite}}</td>
+                    <td class=" prime-color">{{employee.workLocation}}</td>
                     <td>{{employee.workSite}}</td>
-                    <td class="tc">{{employee.workSite}}</td>
-                    <td class="tc">{{employee.workSite}}</td>
-                    <td class="tc">{{employee.workSite}}</td>
+                    <td class="danger">
+                        <div class="fc">
+                            {{employee.unitSize}}
+                            <span class="material-icons danger-icon">
+                                warning
+                            </span>
+                        </div>
+                    </td>
+                    <td class="tc">{{getTimeFormat(employee.activeThrough)}}</td>
+                    <td>
+                        <div *ngIf="employee.flexCapable === 'No'">
+                            {{employee.flexCapable}}
+                        </div>
+                        <div *ngIf="employee.flexCapable === 'Yes'" class="danger">
+                            <div class="fc">
+                                {{employee.flexCapable}}
+                                <span class="material-icons danger-icon">
+                                    warning
+                                </span>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td class="prime-color">AAPD</td>

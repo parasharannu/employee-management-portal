@@ -16,6 +16,24 @@
         <label for="">Work Site:</label>
         <input formControlName="workSite" type="text" class="form-control" placeholder="">
     </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label for="activeFrom">Active from:</label>
+            <input [min]="activeFromMinDate" [max]="activeFromMaxDate" matInput [matDatepicker]="picker1"
+                formControlName="activeFrom">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </div>
+        <div class="form-group">
+            <label for="activeFrom">Active through:</label>
+            <input [min]="activeThroughMinDate" [max]="activeThroughMaxDate" matInput [matDatepicker]="picker2"
+                formControlName="activeThrough">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </div>
+    </div>
+
     <div class="hr s-m"></div>
     <div class="form-group">
         <label for="">Description:</label>
