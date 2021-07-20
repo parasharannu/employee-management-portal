@@ -17,6 +17,10 @@ import { EmployeeDialogInfo4Component } from './components/employee-dialog-info4
 import { FilterComponent } from './components/filter/filter.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { employeeFeatureKey, employeeReducer } from './state-management/reducer/employee.reducer';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -37,9 +41,17 @@ import { employeeFeatureKey, employeeReducer } from './state-management/reducer/
     MatDialogModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    StoreModule.forFeature(employeeFeatureKey, employeeReducer)
+    StoreModule.forFeature(employeeFeatureKey, employeeReducer),
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule,
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

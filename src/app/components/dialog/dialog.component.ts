@@ -38,7 +38,9 @@ export class DialogComponent implements OnInit {
           displayName: [this.employee.displayName, [Validators.required]],
           port: [this.employee.port, [Validators.required]],
           workSite: [this.employee.workSite, [Validators.required]],
-          description: [this.employee.description, [Validators.required]]
+          description: [this.employee.description, [Validators.required]],
+          activeFrom: [this.employee.activeFrom, [Validators.required]],
+          activeThrough: [this.employee.activeThrough, []]
         });
         break;
       }
@@ -163,6 +165,8 @@ export class DialogComponent implements OnInit {
     if (this.formGroup.valid) {
       if (this.modalShow === 4) {
         this.saveShift();
+        this.employee.unitSize = (Math.floor(Math.random() * 10) + 4).toString() + '/' + (Math.floor(Math.random() * 20) + 4).toString();
+        this.employee.flexCapable = this.employee.workLocation === "Location1" ? 'Yes' : 'No';
         this.store.dispatch(addEmployee(this.employee));
         this.closeDialog();
       } else {

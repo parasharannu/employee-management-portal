@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { select, Store } from '@ngrx/store';
@@ -18,7 +19,8 @@ export class EmployeeDashboardComponent implements OnInit {
   employees: Observable<IEmployee[]> = of([]);
 
   constructor(private dialog: MatDialog,
-    private store: Store<EmployeeState>) {
+    private store: Store<EmployeeState>,
+    private datePipe: DatePipe) {
   }
 
   ngOnInit(): void {
@@ -36,4 +38,9 @@ export class EmployeeDashboardComponent implements OnInit {
 
     this.dialog.open(DialogComponent, dialogConfig);
   }
+
+  getTimeFormat(value: any) {
+    return this.datePipe.transform(value, 'MM/dd/yyyy');
+  }
+
 }
