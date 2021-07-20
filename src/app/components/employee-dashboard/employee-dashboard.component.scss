@@ -44,6 +44,10 @@
     .btn-back {
         margin-right: auto;
     }
+
+    .modal-dialog{
+        max-width: 650px;
+    }
 }
 
 .header {
@@ -52,7 +56,8 @@
         color: #2694EC;
         margin-bottom: 0;
     }
-    .material-icons{
+
+    .material-icons {
         margin-right: 5px;
     }
 }
